@@ -1,9 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bahianita&family=Bellota+Text:wght@400;700&family=Cormorant+Garamond:wght@400;500&display=swap');
 
-/* ==============================
+/* =====================================
    COLORS AND GENERAL SETTINGS
-============================== */
+===================================== */
 
 :root {
     --bg: #f9cfe3;
@@ -22,7 +22,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 65px;
+    scroll-padding-top: 75px;
 }
 
 body {
@@ -34,22 +34,22 @@ body {
     font-family: 'Bellota Text', 'Bahianita', sans-serif;
 }
 
-/* ==============================
+/* =====================================
    MAIN CONTAINER
-============================== */
+===================================== */
 
 .wrap {
     width: 100%;
-    max-width: 348px;
+    max-width: 1375px;
     min-height: 100vh;
     margin: 0 auto;
     background: var(--bg);
     overflow: hidden;
 }
 
-/* ==============================
+/* =====================================
    HEADER AND LOGO
-============================== */
+===================================== */
 
 header {
     position: sticky;
@@ -59,19 +59,20 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
-    gap: 4px;
-    min-height: 58px;
-    padding: 5px 8px;
+    gap: 12px;
+    min-height: 65px;
+    padding: 8px 24px;
 
     background: var(--bar);
     border-bottom: 1px solid #d9a3c9;
 }
 
 .logo {
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
 
     border-radius: 50%;
     border: 0;
@@ -93,17 +94,17 @@ header {
     border-radius: 50%;
 }
 
-/* ==============================
-   NAVIGATION BUTTONS
-============================== */
+/* =====================================
+   NAVIGATION
+===================================== */
 
 nav,
 .navbar {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 5px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 nav a,
@@ -112,16 +113,16 @@ nav button,
 .navbar button {
     display: inline-block;
 
-    padding: 5px 6px;
+    padding: 9px 16px;
 
-    border: 1px solid var(--ink);
-    border-radius: 0;
+    border: none;
+    border-radius: 20px;
 
     background: var(--btn);
     color: white;
 
     font-family: inherit;
-    font-size: 7px;
+    font-size: 14px;
 
     text-decoration: none;
     text-align: center;
@@ -139,13 +140,13 @@ nav button:hover,
     transform: translateY(-2px);
 }
 
-/* ==============================
+/* =====================================
    GENERAL SECTIONS
-============================== */
+===================================== */
 
 section {
-    padding: 12px 10px;
-    border-bottom: 0;
+    width: 100%;
+    padding: 36px clamp(16px, 4vw, 55px);
 }
 
 /* SECTION LABELS */
@@ -154,15 +155,15 @@ section {
     display: block;
     width: max-content;
 
-    margin: 0 auto 18px;
-    padding: 2px 20px;
+    margin: 0 auto 26px;
+    padding: 3px 34px;
 
     background: var(--tag);
     border: 1px solid var(--ink);
 
     font-family: 'Cormorant Garamond', serif;
-    font-size: 11px;
     font-weight: 500;
+    font-size: 20px;
     letter-spacing: 1px;
     text-align: center;
 }
@@ -171,15 +172,15 @@ h2.tag {
     font-weight: 400;
 }
 
-/* ==============================
+/* =====================================
    HOME SECTION
-============================== */
+===================================== */
 
 .home {
     display: grid;
 
-    grid-template-columns: 44% 1fr;
-    gap: 12px;
+    grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+    gap: clamp(25px, 5vw, 65px);
 
     align-items: center;
 }
@@ -188,6 +189,7 @@ h2.tag {
     position: relative;
 
     width: 100%;
+    max-width: 380px;
 
     border: 2px solid var(--ink);
     background: #ffe9ee;
@@ -215,10 +217,9 @@ h2.tag {
 
     font-size: 12px;
     text-align: center;
-
     padding: 4px;
-    opacity: 0;
 
+    opacity: 0;
     transition: 0.2s;
 }
 
@@ -227,38 +228,36 @@ h2.tag {
     opacity: 1;
 }
 
-/* WELCOME TEXT */
-
 .home h1 {
-    margin: 0 0 12px;
+    margin: 0 0 16px;
 
     font-family: 'Bahianita', sans-serif;
-    font-size: 17px;
+    font-size: clamp(34px, 4vw, 52px);
 
     text-align: center;
     line-height: 1;
 }
 
 .home p {
-    max-width: 100%;
+    max-width: 600px;
     margin: 0 auto;
 
     font-family: 'Bahianita', sans-serif;
-    font-size: 10px;
+    font-size: clamp(18px, 2vw, 26px);
 
     text-align: center;
     line-height: 1.1;
 }
 
-/* ==============================
+/* =====================================
    ABOUT ME SECTION
-============================== */
+===================================== */
 
 .about {
     display: grid;
 
-    grid-template-columns: 1fr 1.2fr;
-    gap: 10px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: clamp(20px, 4vw, 45px);
 
     align-items: center;
 }
@@ -267,17 +266,18 @@ h2.tag {
     margin: 0;
 
     font-family: 'Bahianita', sans-serif;
-    font-size: 11px;
+    font-size: clamp(18px, 2vw, 26px);
 
-    line-height: 1.05;
+    line-height: 1.1;
     text-transform: uppercase;
 }
 
-/* ==============================
+/* =====================================
    IMAGE GALLERY
-============================== */
+===================================== */
 
 .car {
+    width: 100%;
     perspective: 900px;
     text-align: center;
 }
@@ -288,12 +288,15 @@ h2.tag {
     justify-content: center;
     align-items: center;
 
-    gap: 3px;
-    height: 90px;
+    width: 100%;
+    height: clamp(130px, 17vw, 210px);
+
+    gap: 8px;
 }
 
 .slide {
     flex: 0 0 28%;
+    min-width: 0;
     height: 100%;
 
     border: 2px solid var(--ink);
@@ -335,13 +338,13 @@ h2.tag {
     display: flex;
     justify-content: center;
 
-    gap: 7px;
-    margin-top: 8px;
+    gap: 10px;
+    margin-top: 14px;
 }
 
 .dots button {
-    width: 6px;
-    height: 6px;
+    width: 9px;
+    height: 9px;
 
     padding: 0;
 
@@ -356,30 +359,32 @@ h2.tag {
     background: var(--ink);
 }
 
-/* ==============================
+/* =====================================
    SKILLS SECTION
-============================== */
+===================================== */
 
 #skills {
-    padding: 30px 10px;
+    padding: 40px clamp(16px, 4vw, 55px) 65px;
 }
 
 .skills {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
-    gap: 28px 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px clamp(20px, 5vw, 70px);
 }
 
 .sk {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 12px;
+
+    min-width: 0;
 }
 
 .sk .ic {
-    flex: 0 0 55px;
-    width: 55px;
+    flex: 0 0 clamp(65px, 10vw, 120px);
+    width: clamp(65px, 10vw, 120px);
 
     aspect-ratio: 1;
 
@@ -403,9 +408,9 @@ h2.tag {
     margin: 0;
 
     font-family: 'Bahianita', sans-serif;
-    font-size: 7px;
+    font-size: clamp(13px, 1.5vw, 20px);
 
-    line-height: 1.15;
+    line-height: 1.1;
     text-transform: uppercase;
 }
 
@@ -413,12 +418,12 @@ h2.tag {
     box-shadow: 4px 4px 0 var(--btn);
 }
 
-/* ==============================
+/* =====================================
    CONTACTS SECTION
-============================== */
+===================================== */
 
 #contacts {
-    padding: 30px 10px;
+    padding: 40px clamp(16px, 4vw, 55px) 70px;
 }
 
 .contacts {
@@ -429,7 +434,7 @@ h2.tag {
     justify-items: center;
     align-items: start;
 
-    gap: 5px;
+    gap: 20px;
 }
 
 .ct {
@@ -448,8 +453,8 @@ h2.tag {
 .ct .c {
     display: block;
 
-    width: 38px;
-    height: 38px;
+    width: clamp(42px, 5vw, 65px);
+    height: clamp(42px, 5vw, 65px);
 
     transition: transform 0.2s;
 }
@@ -466,11 +471,11 @@ h2.tag {
 }
 
 .ct b {
-    margin: 5px 0;
+    margin: 7px 0 5px;
 
     font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
-    font-size: 7px;
+    font-size: clamp(10px, 1vw, 14px);
 
     letter-spacing: 0.4px;
     text-transform: uppercase;
@@ -485,9 +490,9 @@ h2.tag {
     list-style: none;
 
     font-family: 'Bahianita', sans-serif;
-    font-size: 5px;
+    font-size: clamp(8px, 0.8vw, 11px);
 
-    line-height: 1.3;
+    line-height: 1.35;
     text-align: center;
 
     overflow-wrap: anywhere;
@@ -511,19 +516,19 @@ h2.tag {
     text-decoration: underline;
 }
 
-/* ==============================
+/* =====================================
    FOOTER
-============================== */
+===================================== */
 
 footer {
-    padding: 10px;
-    font-size: 8px;
+    padding: 14px;
+    font-size: 12px;
     text-align: center;
 }
 
-/* ==============================
+/* =====================================
    LOGIN MODAL
-============================== */
+===================================== */
 
 .modal {
     position: fixed;
@@ -608,25 +613,165 @@ footer {
     font-size: 13px;
 }
 
-/* ==============================
-   TABLET AND DESKTOP
-   Keep the same reference layout
-============================== */
+/* =====================================
+   TABLETS AND SMALL LAPTOPS
+===================================== */
 
-@media (min-width: 500px) {
-    .wrap {
-        max-width: 348px;
+@media (max-width: 900px) {
+    header {
+        padding: 8px 16px;
+    }
+
+    nav,
+    .navbar {
+        gap: 6px;
+    }
+
+    nav a,
+    nav button,
+    .navbar a,
+    .navbar button {
+        font-size: 12px;
+        padding: 8px 11px;
+    }
+
+    .home {
+        grid-template-columns: minmax(220px, 330px) minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .about {
+        grid-template-columns: 1fr 1.1fr;
+        gap: 20px;
+    }
+
+    .stage {
+        height: 140px;
+    }
+
+    .skills {
+        gap: 28px 18px;
     }
 }
 
-/* ==============================
-   SMALL SCREENS
-============================== */
+/* =====================================
+   MOBILE PHONES
+===================================== */
 
-@media (max-width: 340px) {
+@media (max-width: 600px) {
     header {
-        padding: 5px;
-        gap: 3px;
+        justify-content: center;
+        padding: 8px 10px;
+    }
+
+    nav,
+    .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    nav a,
+    nav button,
+    .navbar a,
+    .navbar button {
+        font-size: 11px;
+        padding: 7px 10px;
+    }
+
+    section {
+        padding: 25px 16px;
+    }
+
+    /* HOME */
+    .home {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .photo {
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .home h1 {
+        font-size: clamp(28px, 7vw, 38px);
+    }
+
+    .home p {
+        font-size: clamp(17px, 4vw, 21px);
+    }
+
+    /* ABOUT */
+    .about {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .about p {
+        font-size: clamp(17px, 4vw, 21px);
+        line-height: 1.1;
+    }
+
+    .stage {
+        height: clamp(110px, 32vw, 160px);
+    }
+
+    /* SKILLS */
+    #skills {
+        padding: 28px 16px 45px;
+    }
+
+    .skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 12px;
+    }
+
+    .sk {
+        gap: 7px;
+    }
+
+    .sk .ic {
+        flex: 0 0 clamp(48px, 15vw, 75px);
+        width: clamp(48px, 15vw, 75px);
+    }
+
+    .sk p {
+        font-size: clamp(9px, 2.5vw, 13px);
+    }
+
+    /* CONTACTS */
+    #contacts {
+        padding: 28px 12px 45px;
+    }
+
+    .contacts {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .ct .c {
+        width: clamp(34px, 10vw, 48px);
+        height: clamp(34px, 10vw, 48px);
+    }
+
+    .ct b {
+        font-size: clamp(7px, 2vw, 10px);
+    }
+
+    .ct ul {
+        font-size: clamp(5px, 1.6vw, 8px);
+    }
+}
+
+/* =====================================
+   EXTRA SMALL PHONES
+===================================== */
+
+@media (max-width: 360px) {
+    header {
+        gap: 5px;
+        padding: 6px;
     }
 
     .logo {
@@ -637,50 +782,60 @@ footer {
 
     nav,
     .navbar {
-        gap: 3px;
+        gap: 4px;
     }
 
     nav a,
     nav button,
     .navbar a,
     .navbar button {
-        padding: 4px;
-        font-size: 6px;
+        font-size: 9px;
+        padding: 6px 7px;
     }
 
     .home {
-        gap: 8px;
+        gap: 15px;
     }
 
     .home h1 {
-        font-size: 15px;
-    }
-
-    .home p {
-        font-size: 9px;
+        font-size: 25px;
     }
 
     .about p {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .stage {
-        height: 80px;
+        height: 100px;
+    }
+
+    .skills {
+        gap: 20px 8px;
     }
 
     .sk .ic {
-        flex-basis: 48px;
-        width: 48px;
+        flex-basis: 44px;
+        width: 44px;
     }
 
     .sk p {
-        font-size: 6px;
+        font-size: 8px;
     }
 }
 
-/* ==============================
+/* =====================================
+   LARGE DESKTOP SCREENS
+===================================== */
+
+@media (min-width: 1400px) {
+    .wrap {
+        max-width: 1375px;
+    }
+}
+
+/* =====================================
    ACCESSIBILITY
-============================== */
+===================================== */
 
 :focus-visible {
     outline: 3px solid var(--btn);
@@ -688,7 +843,9 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    * {
+    *,
+    *::before,
+    *::after {
         transition: none !important;
         scroll-behavior: auto !important;
     }
