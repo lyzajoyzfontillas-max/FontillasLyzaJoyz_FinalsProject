@@ -29,9 +29,19 @@ photo.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();
 file.onchange=function(){var f=file.files[0];if(!f)return;var r=new FileReader();r.onload=function(){photo.innerHTML='<img alt="Lyza Joyz Fontillas" src="'+r.result+'"><span>Click to change photo</span>'};r.readAsDataURL(f)};
 
 // Nav highlight on scroll
-var links=[].slice.call(document.querySelectorAll('nav a'));
-var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
-document.querySelectorAll('section').forEach(function(s){obs.observe(s)});
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
 
 // Login modal
 var modal=document.getElementById('modal'),msg=document.getElementById('msg'),lb=document.getElementById('openLogin');
